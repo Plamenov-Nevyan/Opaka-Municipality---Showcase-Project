@@ -1,0 +1,132 @@
+.form-container {
+  max-width: 65%;
+  width: 65%;
+}
+.form-container .options-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+}
+.form-container .options-container .option {
+  cursor: pointer;
+}
+.form-container .auth-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  padding: 2em;
+}
+.form-container .auth-form .auth-fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  position: relative;
+  z-index: 1;
+}
+.form-container .auth-form .auth-fieldset .auth-input {
+  padding: 0.2em;
+  border: none;
+  background: transparent;
+  outline: none;
+  border-bottom: 2px solid cornflowerblue;
+  opacity: 0.3;
+  color: azure;
+}
+.form-container .auth-form .auth-fieldset .password-visibility {
+  max-width: 2em;
+  max-height: 2em;
+  fill: azure;
+  cursor: pointer;
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  z-index: 2;
+  transition: ease-in-out 200ms;
+}
+.form-container .auth-form .auth-fieldset .password-visibility:hover {
+  fill: lightgrey;
+}
+.form-container .auth-form .auth-fieldset .auth-input:focus {
+  opacity: 1;
+  border-radius: 0 1em 0 0;
+  box-shadow: 1px -2px 16px -5px rgba(0, 0, 0, 0.39);
+  -webkit-box-shadow: 1px -2px 16px -5px rgba(0, 0, 0, 0.39);
+  -moz-box-shadow: 1px -2px 16px -5px rgba(0, 0, 0, 0.39);
+}
+.form-container .auth-form .auth-fieldset .auth-input:focus + .auth-label,
+.form-container .auth-form .auth-fieldset .auth-input + .static {
+  transform: translateY(-1em);
+}
+.form-container .auth-form .auth-fieldset .auth-label,
+.form-container .auth-form .auth-fieldset .static {
+  padding: 0 0.4em;
+  position: absolute;
+  left: 0.5em;
+  top: 0.2em;
+  left: 0.2em;
+  transition: transform 200ms ease-in-out;
+  pointer-events: none;
+  font-weight: bold;
+  font-style: italic;
+  color: cornflowerblue;
+}
+.form-container .auth-form .redirect-span {
+  position: relative;
+  z-index: 2;
+  color: white;
+  display: flex;
+  align-items: baseline;
+  gap: 0.3em;
+}
+.form-container .auth-form .redirect-span .redirect-link {
+  color: cornflowerblue;
+  transition: ease-in-out 200ms;
+}
+.form-container .auth-form .redirect-span .redirect-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.form-container #login-form .login-btn {
+  flex-shrink: 1;
+  max-width: 20%;
+  padding: 0.2em 0.4em;
+  border-radius: 0.6em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(to left, rgb(63, 251, 135) 32%, rgba(252, 70, 199, 0.9276960784) 68%);
+  background-size: 200% 100%;
+  background-position: left bottom;
+  transition: ease-in-out 200ms;
+  transition: all 600ms ease;
+  color: white;
+  font-weight: bold;
+}
+.form-container #login-form .login-btn:hover {
+  background-position: right bottom;
+  color: black;
+}
+.form-container #register-form .register-btn {
+  flex-shrink: 1;
+  max-width: 20%;
+  padding: 0.2em 0.4em;
+  border-radius: 0.6em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: linear-gradient(to left, rgb(63, 251, 135) 32%, rgba(252, 70, 199, 0.9276960784) 68%);
+  background-size: 200% 100%;
+  background-position: left bottom;
+  transition: ease-in-out 200ms;
+  transition: all 600ms ease;
+  color: white;
+  font-weight: bold;
+}
+.form-container #register-form .register-btn:hover {
+  background-position: right bottom;
+  color: black;
+}/*# sourceMappingURL=authForm.module.css.map */
