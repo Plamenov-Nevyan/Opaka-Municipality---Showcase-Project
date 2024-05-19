@@ -1,0 +1,21 @@
+.subheader-main {
+  background-color: #323232;
+  display: flex;
+  border-bottom: 4px solid #CD2122;
+  gap: 0.3em;
+}
+.subheader-main .subheader-section-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0.5em;
+  transition: ease-in-out 0.3ms;
+  border-right: 1px solid #222222;
+}
+.subheader-main .subheader-section-option .option-heading {
+  color: #DEEFFF;
+}
+.subheader-main .subheader-section-option:hover {
+  background-color: #CD2122;
+}/*# sourceMappingURL=subheader.module.css.map */

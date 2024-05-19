@@ -1,6 +1,7 @@
 import {loginUser, registerUser} from "../../services/authServices";
 import styles from "./css/authForm.module.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function AuthForm() {
   const [selectedForm, setSelectedForm] = useState("login");
@@ -17,6 +18,7 @@ export function AuthForm() {
     password: "",
     confirmPassword: "",
   });
+  const navigate = useNavigate()
 
   const onValsChange = (e, authOption) => {
     if (authOption === "login") {
@@ -42,11 +44,13 @@ export function AuthForm() {
     e.preventDefault()
     const {confirmPassword, ...valsToSend} = registerFormVals
     await registerUser(valsToSend)
+    navigate('/portal')
   }
 
   const onLogin = async(e) => {
     e.preventDefault()
     await loginUser(loginFormVals)
+    navigate('/portal')
   }
 
   return (

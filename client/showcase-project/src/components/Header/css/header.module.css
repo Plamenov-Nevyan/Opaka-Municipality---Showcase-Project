@@ -1,0 +1,42 @@
+.main-header {
+  display: flex;
+  position: relative;
+}
+.main-header .left {
+  background-color: #CD2122;
+  flex: 0 1 40%;
+  -webkit-clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+}
+.main-header .left .left-content {
+  display: flex;
+  align-items: flex-start;
+  padding: 1em;
+  gap: 1em;
+}
+.main-header .left .left-content .logo-container {
+  max-width: 20%;
+}
+.main-header .left .left-content .logo-container .logo {
+  max-width: 100%;
+}
+.main-header .left .left-content .headings {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.main-header .left .left-content .headings .heading-top, .main-header .left .left-content .headings .heading-bottom {
+  color: #DEEFFF;
+}
+.main-header .right {
+  background-image: url("../images/header-right-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 70%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  right: 0;
+  top: 0;
+}/*# sourceMappingURL=header.module.css.map */

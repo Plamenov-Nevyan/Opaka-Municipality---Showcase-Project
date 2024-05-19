@@ -1,0 +1,41 @@
+.main-header {
+    display: flex;
+    position: relative;
+    .left {
+        background-color: #CD2122;
+        flex: 0 1 40%;
+        clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+        .left-content {
+            display: flex;
+            align-items: flex-start;
+            padding: 1em;
+            gap: 1em;
+            .logo-container {
+                max-width: 20%;
+                .logo {
+                    max-width: 100%;
+                }
+            }
+            .headings {
+                display: flex;
+                flex-direction: column;
+                gap: .5em;
+                .heading-top, .heading-bottom {
+                    color: #DEEFFF;
+                }
+            }
+        }
+    }
+    .right {
+        background-image: url('../images/header-right-bg.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 70%;
+        height: 100%;
+        z-index: -1;
+        position: absolute;
+        right: 0;
+        top: 0
+    }
+}
