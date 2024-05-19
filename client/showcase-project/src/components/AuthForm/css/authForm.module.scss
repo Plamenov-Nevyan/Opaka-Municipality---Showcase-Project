@@ -1,6 +1,7 @@
 .form-container {
     max-width: 65%;
     width: 65%;
+    padding: 1em;
     .options-container {
         display: flex;
         flex-wrap: wrap;
@@ -29,7 +30,7 @@
                 outline: none;
                 border-bottom: 2px solid cornflowerblue;
                 opacity: 0.3;
-                color: azure;
+                color: black;
               }
               .password-visibility {
                 max-width: 2em;

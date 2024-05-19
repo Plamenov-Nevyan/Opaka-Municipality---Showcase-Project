@@ -1,3 +1,4 @@
+import {loginUser, registerUser} from "../../services/authServices";
 import styles from "./css/authForm.module.css";
 import { useState } from "react";
 
@@ -5,13 +6,13 @@ export function AuthForm() {
   const [selectedForm, setSelectedForm] = useState("login");
   const [loginFormVals, setLoginFormVals] = useState({
     email: "",
-    password: "",
+    password: ""
   });
   const [registerFormVals, setRegisterFormVals] = useState({
     name: "",
     surname: "",
-    familyName: "",
-    workTitle: "",
+    familyname: "",
+    worktitle: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -37,6 +38,17 @@ export function AuthForm() {
 
   const onFormSelect = (option) => setSelectedForm(option);
 
+  const onRegister = async (e) => {
+    e.preventDefault()
+    const {confirmPassword, ...valsToSend} = registerFormVals
+    await registerUser(valsToSend)
+  }
+
+  const onLogin = async(e) => {
+    e.preventDefault()
+    await loginUser(loginFormVals)
+  }
+
   return (
     <div className={styles["form-container"]}>
       <div className={styles["options-container"]}>
@@ -45,7 +57,7 @@ export function AuthForm() {
         <h3 onClick={() => onFormSelect('register')} className={styles["option"]}>Регистриране</h3>
       </div>
       {selectedForm === "login" ? (
-        <form className={styles["auth-form"]} id={styles['login-form']}>
+        <form className={styles["auth-form"]} id={styles['login-form']} onSubmit={(e) => onLogin(e)}>
           <fieldset className={styles["auth-fieldset"]}>
             <input
               onChange={(e) => onValsChange(e, "login")}
@@ -53,6 +65,7 @@ export function AuthForm() {
               type="text"
               name="email"
               id="email"
+              value={loginFormVals.email}
             />
             <label
               className={
@@ -71,6 +84,7 @@ export function AuthForm() {
               type="password"
               name="password"
               id="password"
+              value={loginFormVals.password}
             />
             <label
               className={
@@ -85,7 +99,7 @@ export function AuthForm() {
           <button className={styles['login-btn']}>Влизане</button>
         </form>
       ) : (
-        <form className={styles["auth-form"]} id={styles['register-form']}>
+        <form className={styles["auth-form"]} id={styles['register-form']} onSubmit={(e) => onRegister(e)}>
           <fieldset className={styles['auth-fieldset']}>
             <input
               onChange={(e) => onValsChange(e, "register")}
@@ -93,6 +107,7 @@ export function AuthForm() {
               type="text"
               name="name"
               id="name"
+              value={registerFormVals.name}
             />
             <label
               className={
@@ -111,6 +126,7 @@ export function AuthForm() {
               type="text"
               name="surname"
               id="surname"
+              value={registerFormVals.surname}
             />
             <label
               className={
@@ -127,12 +143,13 @@ export function AuthForm() {
               onChange={(e) => onValsChange(e, "register")}
               className={styles["auth-input"]}
               type="text"
-              name="familyName"
-              id="familyName"
+              name="familyname"
+              id="familyname"
+              value={registerFormVals.familyname}
             />
             <label
               className={
-                registerFormVals.familyName !== ""
+                registerFormVals.familyname !== ""
                   ? styles["static"]
                   : styles["auth-label"]
               }
@@ -147,6 +164,7 @@ export function AuthForm() {
               type="text"
               name="email"
               id="email"
+              value={registerFormVals.email}
             />
             <label
               className={
@@ -163,12 +181,13 @@ export function AuthForm() {
               onChange={(e) => onValsChange(e, "register")}
               className={styles["auth-input"]}
               type="text"
-              name="workTitle"
-              id="workTitle"
+              name="worktitle"
+              id="worktitle"
+              value={registerFormVals.worktitle}
             />
             <label
               className={
-                registerFormVals.workTitle !== ""
+                registerFormVals.worktitle !== ""
                   ? styles["static"]
                   : styles["auth-label"]
               }
@@ -183,6 +202,7 @@ export function AuthForm() {
               type="password"
               name="password"
               id="password"
+              value={registerFormVals.password}
             />
             <label
               className={
@@ -201,6 +221,7 @@ export function AuthForm() {
               type="password"
               name="confirmPassword"
               id="confirmPassword"
+              value={registerFormVals.confirmPassword}
             />
             <label
               className={
